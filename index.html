@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/ab3056bc7e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tetris</title>
+  </head>
+  <body>
+    <!-- Game boy creation -->
+    <div class="borders"></div>
+    <div class="button b1"></div>
+    <div class="button b2"></div>
+    <div class="arrows">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <h2 class="gameBoy">GAME BOY</h2>
+    <ul class="holes">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <!-- Game boy creation -->
+
+    <!-- functional game -->
+    <canvas class="canvas"></canvas>
+    <!-- functional game -->
+    <!-- info -->
+    <div class="info">
+      <div class="stats">
+        <div class="shape purple">
+          <img src="shapes/purple.png" alt="" />
+          <p class="score">000</p>
+        </div>
+        <div class="shape orange">
+          <img src="shapes/orange.png" alt="" />
+          <p class="score">000</p>
+        </div>
+        <div class="shape red">
+          <img src="shapes/red.png" alt="" />
+          <p class="score">000</p>
+        </div>
+        <div class="shape yellow">
+          <img src="shapes/yellow.png" alt="" />
+          <p class="score">000</p>
+        </div>
+        <div class="shape lime">
+          <img src="shapes/lime.png" alt="" />
+          <p class="score">000</p>
+        </div>
+        <div class="shape blue">
+          <img src="shapes/blue.png" alt="" />
+          <p class="score">000</p>
+        </div>
+        <div class="shape cyan">
+          <img src="shapes/cyan.png" alt="" />
+          <p class="score">000</p>
+        </div>
+      </div>
+      <div class="line">
+        <p>Lines : </p>
+        <p class="sc">0</p>
+      </div>
+      <div class="score"><p>00000</p></div>
+    </div>
+    <!-- lose screen -->
+    <div class="lose">
+      <p>GAME OVER</p>
+      <span class="restart">Restart</span>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

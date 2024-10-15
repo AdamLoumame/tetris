@@ -1,0 +1,313 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-top: 5px;
+  height: 100vh;
+  text-align: center;
+  background-color: #d3d3d3;
+  font-family: "Press Start 2P";
+}
+.borders {
+  height: 442px;
+  width: 442px;
+  position: absolute;
+  background-color: transparent;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  border-left: 100px solid #7e7b7a; /* Thicker left border */
+  border-right: 100px solid #7e7b7a; /* Thicker right border */
+  border-top: 50px solid #7e7b7a; /* Thinner top border */
+  border-bottom: 50px solid #7e7b7a; /* Thinner bottom border */
+  border-radius: 10px 10px 120px 10px;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+.borders::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -80px;
+  height: 5px;
+  width: 135%;
+  background-color: #4c3a80;
+}
+.borders::before {
+  content: "";
+  position: absolute;
+  top: -35px;
+  left: -80px;
+  height: 5px;
+  width: 135%;
+  background-color: #a5447b;
+}
+.gameBoy {
+  color: #474bbe;
+  position: absolute;
+  bottom: 10px;
+  margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.button {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #9b1f57;
+  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.3), 0 2px 7px rgb(0 0 0 / 60%);
+}
+.b1 {
+  top: 150px;
+  right: 60px;
+}
+.b2 {
+  top: 230px;
+  right: 190px;
+}
+.button::after {
+  position: absolute;
+  color: #474bbe;
+  bottom: -25px;
+  right: 0;
+  rotate: -30deg;
+}
+.b1::after {
+  content: "A";
+}
+.b2::after {
+  content: "B";
+}
+.arrows {
+  position: absolute;
+}
+.arrows > span {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  background-color: #2b2c2e;
+  box-shadow: 
+        0 -3px 8px rgba(0, 0, 0, 0.4);
+}
+.arrows span:nth-of-type(1) {
+  top: 250px;
+  left: 140px;
+  height: 70px;
+  width: 70px;
+}
+.arrows span:nth-of-type(1)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2b2c2e;
+  height: 70%;
+  width: 70%;
+  border-radius: 50%;
+}
+.arrows span:nth-of-type(2) {
+  top: 170px;
+  left: 140px;
+  height: 80px;
+  width: 70px;
+}
+.arrows span:nth-of-type(5) {
+  top: 320px;
+  left: 140px;
+  height: 80px;
+  width: 70px;
+}
+.arrows span:nth-of-type(3) {
+  top: 250px;
+  left: 60px;
+  height: 70px;
+  width: 80px;
+}
+.arrows span:nth-of-type(3)::before,
+.arrows span:nth-of-type(4)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+  background-color: #3a3b3f;
+  width: 15px;
+  height: 70%;
+  border-radius: 6px;
+}
+.arrows span:nth-of-type(3)::after,
+.arrows span:nth-of-type(4)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 66%;
+  transform: translate(-50%, -50%);
+  background-color: #3a3b3f;
+  width: 15px;
+  height: 70%;
+  border-radius: 6px;
+}
+.arrows span:nth-of-type(4) {
+  top: 250px;
+  left: 210px;
+  width: 80px;
+  height: 70px;
+}
+.holes {
+  position: absolute;
+  bottom: -55px;
+  right: 70px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  rotate: 55deg;
+}
+.holes li{
+  height: 15px;
+  width: 150px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow:         inset 0 0 5px rgba(0, 0, 0, 0.5), /* Light shadow all around */
+  inset 0 3px 10px rgba(0, 0, 0, 0.5); /* Weaker bottom shadow */
+  position: relative;
+  overflow: hidden;
+}
+.holes li:not(:last-of-type)::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  height: 3px;
+  width: 70%;
+}
+
+/* functional game */
+.canvas{
+  background-color: #000;
+  margin-top: 65px;
+  border: solid 5px #ddd;
+  margin-left: -190px;
+}
+
+/* socres and info */
+.info{
+  background-color: #000;
+  height: 442px;
+  width: 210px;
+  position: absolute;
+  top: 70px;
+  left: 52%;
+  border: solid 5px #ddd;
+  border-left: none;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.stats{
+  flex-basis: 75%;
+  border: 1px solid white;
+  outline: 2px solid #797474;
+  padding: 5px;
+}
+.stats .shape:not(:first-of-type):not(:last-of-type){
+  margin: 10px 0;
+}
+.stats .shape{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  align-items: center;
+}
+.stats .shape img{
+  height: 35px;
+}
+.stats .shape:first-of-type img{
+  margin-left: -7px;
+}
+.stats .shape p{
+  color: white;
+  font-size: 15px;
+  margin: 0;
+  margin-right: 5px;
+}
+
+.line {
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+}
+.score{
+  color: white;
+  margin: 10px 0 0 10px;
+}
+.score p {
+  margin: 0;
+  font-size: 20px;
+}
+.lose{
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-49%);
+  width: 470px;
+  background-color: #000;
+  color: white;
+  height: 442px;
+  border: solid 5px #ddd;
+  display: flex;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;
+}
+.lose p {
+  font-size: 50px;
+  color: red;
+  margin-top: -50px;
+  -webkit-text-stroke: white 1px;
+  line-height: 1.2;
+}
+.lose span{
+  display: block;
+  margin-top: 50px;
+  font-size: 25px;
+  color: black;
+  width: fit-content;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+  background-color: white;
+}
+.lose span::after{
+  content:"";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  transition: .3s;
+  z-index: -1;
+}
+.lose span:hover::after{
+  top: 0;
+}
+.lose span:hover{
+  background: none;
+  color: white;
+}
