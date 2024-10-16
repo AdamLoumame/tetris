@@ -209,7 +209,7 @@ function gameloop(){
 document.addEventListener("keydown",e=>{
     if (e.code === "ArrowDown"){
         clearInterval(mainloop)
-        speed = 40
+        speed = 25
         gameloop()
     }
 })
